@@ -25,7 +25,7 @@ public class RegistrationTests extends TestBase {
         $("[aria-label$='July 30th, 2008']").click();
         $("#subjectsInput").setValue("Math").pressEnter();
         $("#hobbiesWrapper").$(byText("Sports")).click();
-        $("#uploadPicture").uploadFromClasspath("img/1.png");
+//        $("#uploadPicture").uploadFromClasspath("img/1.png");
         $("#currentAddress").setValue("Some address 1");
         $("#state").scrollTo().click();
         $("#stateCity-wrapper").$(byText("NCR")).click();

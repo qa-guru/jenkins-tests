@@ -1,5 +1,7 @@
 package tests.properties;
 
+import com.codeborne.selenide.Configuration;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
@@ -60,5 +62,18 @@ public class SystemPropertiesTests {
         System.out.println(browser);
         System.out.println(version);
         System.out.println(browserSize);
+    }
+
+//    @BeforeAll
+//    static void setUp() {
+//        Configuration.browser = System.getProperty("browser", "chrome");
+//        Configuration.browserVersion = System.getProperty("version", "91");
+//        Configuration.browserSize = System.getProperty("browserSize", "300x300");
+//    }
+
+    @Test
+    @Tag("properties")
+    void someTest7() {
+        System.out.println("I want to say: " + System.getProperty("someText"));
     }
 }

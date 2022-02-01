@@ -8,3 +8,28 @@ java  \
 "-Dcomm=Any comment here" \
 "-Dconfig.file=./notifications/telegram_config_local.json" \
 -jar ./notifications/allure-notifications-3.1.2.jar
+
+########### REMOTE TELEGRAM
+java  \
+"-DprojectName=${PROJECT_NAME}" \
+"-Denv=${ENVIRONMENT}" \
+"-DreportLink=${BUILD_URL}" \
+"-Dcomm=${COMMENT}" \
+"-Dconfig.file=./notifications/telegram_config.json" \
+-jar ./notifications/allure-notifications-3.1.2.jar
+
+########### REMOTE TELEGRAM WITHOUT .JAR
+java  \
+"-DprojectName=${PROJECT_NAME}" \
+"-Denv=${ENVIRONMENT}" \
+"-DreportLink=${BUILD_URL}" \
+"-Dcomm=${COMMENT}" \
+"-Dconfig.file=./notifications/telegram_config.json" \
+-jar ../allure-notifications-3.1.2.jar
+
+########### DOWNLOAD .JAR TO ROOT PROJECTS FOLDER
+cd ..
+FILE=./allure-notifications-3.1.2.jar
+if [ ! -f "$FILE" ]; then
+   wget https://github.com/qa-guru/allure-notifications/releases/download/3.1.2/allure-notifications-3.1.2.jar
+fi
